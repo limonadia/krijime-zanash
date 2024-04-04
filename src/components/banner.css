@@ -1,0 +1,39 @@
+.banner {
+    background-image: url("../assets/watercolor-pink-green-background_23-2150287511.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+
+.bannertitle{
+    background: linear-gradient(to right, #3d2340 0%,#962ca1, #0da54a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color:  #f0070736;
+    letter-spacing:2px;
+    font-family: "Rubik Scribble", system-ui;
+    }
+
+    .bannersubtitle {
+    font-family: "Comic Neue", cursive;
+    font-optical-sizing: auto;
+    ctext-transform: uppercase;
+	background: linear-gradient(to right, #3d2340 0%,#962ca1, #0da54a 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+    letter-spacing:1px;
+    }
+
+    .bannerbutton {
+        border:2px solid #b546ab;
+        transition: all 0.5s ease;
+        color: #b546ab;
+    }
+    
+    .bannerbutton:hover{
+        background: linear-gradient(to right, #3d2340 0%,#962ca1, #0da54a 100%);
+        border: transparent;
+        border-radius:20px;
+        color:white;
+        transform: scale(1.1);
+        background-repeat: no-repeat;
+        cursor: pointer;
+    }
