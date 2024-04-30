@@ -1,0 +1,52 @@
+.horizontal-slider {
+    width: 100%;
+    /* max-width: 500px; */
+    height: 50px;
+}
+
+.horizontal-slider .example-track {
+    top: 20px;
+    height: 3px;
+}
+
+.example-track.example-track-0 {
+    background: rgba(209, 213, 219, 0.5);
+}
+
+.example-track.example-track-1 {
+    background: black;
+}
+
+.example-track.example-track-2 {
+    background: rgba(209, 213, 219, 0.5);
+}
+
+.horizontal-slider .example-thumb {
+    top: 26%;
+    width: 15px;
+    height: 15px;
+    line-height: 38px;
+}
+
+.example-thumb {
+    font-size: 0em;
+    background: rgba(76, 29, 149);
+    cursor: pointer;
+    box-sizing: border-box;
+    border-radius: 50%;
+}
+
+.priceBox{
+    border:1px solid rgba(209, 213, 219, 0.5);
+    font-size: 1rem;
+}
+
+button{
+    margin: 1rem;
+    padding: 1rem;
+    margin-right: 3px;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: rgba(76, 29, 149) ;
+    color: white;
+}

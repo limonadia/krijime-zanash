@@ -1,0 +1,23 @@
+[
+    {
+        "id" : 1,
+        "imgpath" : "./img/p1.jpg",
+        "title" : "Earrings",
+        "name" : "V1",
+        "price" : 10  
+    },
+    {
+        "id" : 2,
+        "imgpath" : "/img/p2.jpg",
+        "title" : "Earrings",
+        "name" : "V2",
+        "price" : 13  
+    },
+    {
+        "id" : 3,
+        "imgpath" : "/img/p3.jpg",
+        "title" : "Earrings",
+        "name" : "V3",
+        "price" : 17 
+    }
+]
