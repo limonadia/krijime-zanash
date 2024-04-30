@@ -1,5 +1,10 @@
-p, li, a, button{
-    text-transform: uppercase;
+.navbar p,
+.navbar li,
+.navbar a,
+.navbar button,
+.menu-list li,
+.menu{
+  text-transform: uppercase;
 	background: linear-gradient(to right, #3d2340 0%,#962ca1, #0da54a 100%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
@@ -13,15 +18,19 @@ p, li, a, button{
   }
   
   .menu-nav.active {
-    display: block;
+    display: table-column;
   }
   
-  .menu-list li {
-    margin-bottom: 10px;
-    border-bottom:0.5px solid black;
+  .menu-list li{
+    border-bottom:0.5px solid rgba(0, 0, 0, .3);
+    padding: 10px;
   }
   
-  .menu-list li a {
-    text-decoration: none;
-    color: black;
+.h{
+  border-top: 0.5px solid rgba(0, 0, 0, .3);
+}
+
+  .menu-list li{
+    font-family: "Comic Neue", cursive;
+    color: purple;
   }
