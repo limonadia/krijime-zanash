@@ -6,7 +6,7 @@ return(
     <div className="bg-white  w-screen md:h-20 h-64 text-purple-900 " style={{ fontFamily: "'Comic Neue', cursive" }}>
             <div className="flex md:flex-row flex-col text-center justify-between">
                 <div className="flex flex-row justify-center md:mx-2 py-10">
-                    <Link to="/home"><p className="px-4 md:px-3 text-sm"> Home </p></Link>
+                    <Link to="/home" onClick={window.scrollTo(0, 0)}><p className="px-4 md:px-3 text-sm"> Home </p></Link>
                     <Link to="/about"><p className="px-4 md:px-3 text-sm"> About </p></Link>
                     <Link to="/shop"><p className="px-4 md:px-3 text-sm"> Shop </p></Link>
                     <Link to="/contact"><p className="px-4 md:px-3 text-sm"> Contact </p></Link>

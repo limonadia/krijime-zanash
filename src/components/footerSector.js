@@ -2,7 +2,7 @@
 function FooterSection({icon, h1Text, desc}){
     return(
         <>
-            <div className="  flex sm:flex-row flex-col items-center p-5 text-sm  md:justify-left justify-center text-center sm:text-left " >
+            <div className=" bg-white flex sm:flex-row flex-col items-center p-5 text-sm  md:justify-left justify-center text-center sm:text-left " >
 
                 <div className="pb-3">
                     <div className=" bg-purple-900 rounded-full text-white w-10 h-10 p-3">

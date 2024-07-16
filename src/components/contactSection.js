@@ -1,5 +1,6 @@
 
-function ContactSection({icon, h1Text, desc}){
+
+function ContactSection({icon, h1Text, desc, link}){
     return(
         <>
             <div className="flex flex-row py-2 my-5 w-full" >
@@ -11,7 +12,7 @@ function ContactSection({icon, h1Text, desc}){
                 </div>
                 <div className="flex flex-col px-5">
                     <h1 className="text-gray-500 text-sm uppercase">{h1Text}</h1>
-                    <p className="md:text-2xl text-sm text-purple-900">{desc}</p>
+                    <a href={link} className="md:text-2xl text-sm text-purple-900" target="_blank" rel="noopener noreferrer">{desc} </a>
                 </div>
 
             </div>

@@ -1,8 +1,10 @@
+import './popup.css';
 
 function Categories(){
     return(
         <>
-        <div style={{fontFamily:"Comic Neue"}}>
+        <div style={{fontFamily:"Comic Neue"}} className='hover-container'>
+        <span class="hover-popup">This component is not finished yet.</span>
             <div>
                 <p className="text-xl mb-4 text-purple-900">Categories</p>
                 <div className="text-lg ml-5">

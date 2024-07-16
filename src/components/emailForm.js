@@ -3,6 +3,7 @@ import { TfiEmail } from "react-icons/tfi";
 import { MdPhoneInTalk } from "react-icons/md";
 import { IoLocationOutline } from "react-icons/io5";
 import FollowUs from "./followUs";
+import ContactForm from "./contactForm";
 
 function EmailForm(){
     return(
@@ -12,21 +13,15 @@ function EmailForm(){
                 <div className="flex flex-col md:w-6/12 w-11/12 h-full">
                     <h1 className="py-5 text-3xl font-black md:text-left text-center">Get In Touch</h1>
                     <div className="bg-purple-200 shadow-md">
-                        <form className="md:p-12 p-5 flex flex-col">
-                            <input type="text" className="border border-gray-400 p-3 my-2" placeholder="Full Name" ></input>
-                            <input type="tel" className="border border-gray-400 p-3 my-2" placeholder="Phone Number" ></input>
-                            <input type="email" className="border border-gray-400 p-3 my-2" placeholder="Email" ></input>
-                            <textarea rows='6'  className="border border-gray-400 p-3 my-2" placeholder="Message"></textarea>
-                            <button type='submit' className="bg-purple-600 uppercase text-white p-2 float-left md:w-2/6 my-2">Send</button>
-                        </form>
+                        <ContactForm/>
                     </div>
                 </div>
                 <div className="flex flex-col md:w-6/12 w-11/12  h-full p-2 md:pl-16">
                     <h1 className="py-5 text-3xl font-black md:text-left text-center">Talk To Us</h1>
                     <div className="flex flex-col md:items-start items-center">
-                        <ContactSection icon={<TfiEmail/>} h1Text={"Email"} desc={"something@fairies.com"}/>
-                        <ContactSection icon={<MdPhoneInTalk/>} h1Text={"Phone Number"} desc={"123-456-7890"}/>
-                        <ContactSection icon={<IoLocationOutline/>} h1Text={"Address"} desc={"1001 Albania, Tirana"}/>
+                        <ContactSection icon={<TfiEmail/>} h1Text={"Email"} desc={"nadiamezini@gmail.com"} link={"mailto:nadiamezini@gmail.com"}/>
+                        <ContactSection icon={<MdPhoneInTalk/>} h1Text={"Phone Number"} desc={"123-456-7890"} link={"tel:1234567890"}/>
+                        <ContactSection icon={<IoLocationOutline/>} h1Text={"Address"} desc={"1001 Albania, Tirana"} link={"https://maps.app.goo.gl/TvV8PbiRJFNofRj3A"}/>
                     </div>
                     <div>
                         <FollowUs/>

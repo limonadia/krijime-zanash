@@ -7,7 +7,7 @@ import './customerRev.css';
 function ServiceFooter(){
     return(
         <>
-        <div className="footer-div">
+        <div className="footer-div bg-transparent">
         <div className="flex sm:flex-row lg:px-20 flex-col justify-between sm:h-40 h-screen sm:mx-30 mx-15 my-10" style={{ fontFamily: "'Comic Neue', cursive" }}>
             <FooterSection icon={<FaLock/>} h1Text={"Secure Payment Request"} desc={"All our payments are SSL secured"}/>
             <FooterSection icon={<FaBox/>} h1Text={"Delivered with care"} desc={"Super fast shipping to your door"}/>

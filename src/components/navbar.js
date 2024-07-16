@@ -5,7 +5,8 @@ import React, { useState } from 'react';
 import { Outlet, Link } from "react-router-dom";
 import ShoppingCart from './shoppingCart';
 import cart from '../utilities/cartFunction';
-
+import { HiCurrencyDollar } from "react-icons/hi2";
+import './popup.css';
 
 
 const style = { color: "purple"};
@@ -20,16 +21,20 @@ const Navbar = () => {
   };
 
     const [isOpen, setIsOpen] = useState(false);
-  
     const toggleMenu = () => {
       setIsOpen(!isOpen);
     };
+
+    const [currencyOpen, setCurrency] = useState(true);
+    const toggleCurrency = () => {
+      setCurrency(!currencyOpen);
+    }
   
     return (
       <div>
         {/* Navbar */}
         <ShoppingCart  status={cartStatus} closeCart={toggleCart}/>
-        <div className='navbar md:flex flex-row justify-between bg-transparent p-2.5 hidden'>
+        <div className='navbar md:flex flex-row justify-between bg-transparent p-2.5 hidden h-12'>
           <div><Link to="/home">Fairies Creations</Link></div>
           <div className='flex flex-row gap-3'>
             <Link to="/home">Home</Link>
@@ -37,11 +42,26 @@ const Navbar = () => {
             <Link to="/shop">Shop</Link>
             <Link to="/contact">Contact</Link>
             <Outlet/>
-            <div className='flex cursor-pointer' onClick={toggleCart} >
+            <div className='flex cursor-pointer hover-container' onClick={toggleCart} >
+            <span class="hover-popup navbutton">This component is not finished yet.</span>
             <FaShoppingCart style={{color:"purple", height:"20px", width:"20px"}}/>
             <div className='rounded-full flex justify-center items-center text-white w-4 h-4 absolute text-xs translate-x-3/4 translate-y-3/4' style={{backgroundColor:"purple"}}>{cartnum}</div>
             </div>
-            <p><FaUser style={{color:"purple", height:"20px", width:"20px"}}/></p>
+            <div className='flex cursor-pointer flex-col h-40 justify-between items-center w-11' onClick={toggleCurrency}>
+            <div className='hover-container'><span class="hover-popup navbutton2">This component is not finished yet.</span><HiCurrencyDollar style={{color:"purple", height:"26px", width:"26px"}}/></div>
+            <div>
+            <ul className="currency-menu list-none bg-[#7adb5e] text-center bg-transparent slide-down" style={{display: currencyOpen? 'none': 'block' }}>
+            <li className='border border-gray-500'>USD</li>
+            <li className='border border-gray-500'>EUR</li>
+            <li className='border border-gray-500'>JPY</li>
+            <li className='border border-gray-500'>CAD</li>
+            </ul>
+            </div>
+            </div>
+            <div className='flex cursor-pointer'>
+            <Link to="/login"><FaUser style={{color:"purple", height:"20px", width:"20px"}}/></Link>
+            <Outlet/>
+            </div>
           </div>
         </div>
   
@@ -54,7 +74,7 @@ const Navbar = () => {
             <FaShoppingCart style={{color:"purple", height:"20px", width:"20px"}}/>
             <div className='rounded-full flex justify-center items-center text-white w-4 h-4 absolute text-xs translate-x-3/4 translate-y-3/4' style={{backgroundColor:"purple"}}>{cartnum}</div>            
             </div>
-          <button className="menu-toggle text-base cursor-pointer" onClick={toggleMenu} style={{color:"white", background:"purple"}}>
+          <button className="menu-toggle text-base cursor-pointer mr-4" onClick={toggleMenu} style={{color:"white", background:"purple"}}>
             {isOpen ? <FaTimes /> : <FaBars />}
           </button>
         </div>
