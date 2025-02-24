@@ -5,6 +5,7 @@ import Shop from './pages/shop';
 import Contact from './pages/contact';
 import Login from "./pages/login";
 import SignUp from "./pages/signup";
+import ProtectedRoute from "./protectedRoute";
 
 function App() {
   
@@ -18,6 +19,14 @@ function App() {
     <Route path ="/contact" element={<Contact/>}/>
     <Route path="/login" element={<Login/>}/>
     <Route path="/signup" element={<SignUp/>}/>
+    <Route 
+          path="/dashboard" 
+          element={
+            <ProtectedRoute>
+              <Contact />
+            </ProtectedRoute>
+          } 
+        />
    </Routes>
    </>
    
