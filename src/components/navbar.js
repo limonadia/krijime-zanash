@@ -1,17 +1,22 @@
 import './navbar.css';
 import { FaShoppingCart } from "react-icons/fa";
 import { FaUser , FaTimes, FaBars} from "react-icons/fa";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Outlet, Link } from "react-router-dom";
 import ShoppingCart from './shoppingCart';
 import cart from '../utilities/cartFunction';
 import { HiCurrencyDollar } from "react-icons/hi2";
 import './popup.css';
+import { getProfile } from '../services/authService';
+
 
 
 const style = { color: "purple"};
 
 const Navbar = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [user, setUser] = useState(null);
 
   const cartnum= cart.length;
 
@@ -28,6 +33,39 @@ const Navbar = () => {
     const [currencyOpen, setCurrency] = useState(true);
     const toggleCurrency = () => {
       setCurrency(!currencyOpen);
+    }
+
+    useEffect(() => {
+      const checkUserLogin = async () => {
+        const token = localStorage.getItem('authToken');
+        if (token) {
+          try {
+            // Fetch user profile
+            const response = await getProfile(token); // Your API function
+            if (response && response.user) {
+              setUser(response.user);
+              setIsLoggedIn(true);
+              console.log("Logged in");
+            } else {
+              setIsLoggedIn(false);
+            }
+          } catch (error) {
+            console.error("Error fetching profile:", error);
+            setIsLoggedIn(false);
+          }
+        } else {
+          setIsLoggedIn(false);
+        }
+        setLoading(false);
+      };
+      
+      checkUserLogin();
+    }, []);
+  
+  
+    // Show a loading state while checking login status
+    if (loading) {
+      return <div>Loading...</div>;
     }
   
     return (
@@ -59,7 +97,7 @@ const Navbar = () => {
             </div>
             </div>
             <div className='flex cursor-pointer'>
-            <Link to="/login"><FaUser style={{color:"purple", height:"20px", width:"20px"}}/></Link>
+            <Link to={isLoggedIn ? "/login" : "/profile"}><FaUser style={{color:"purple", height:"20px", width:"20px"}}/></Link>
             <Outlet/>
             </div>
           </div>

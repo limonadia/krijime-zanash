@@ -6,6 +6,7 @@ import Contact from './pages/contact';
 import Login from "./pages/login";
 import SignUp from "./pages/signup";
 import ProtectedRoute from "./protectedRoute";
+import Profile from "./pages/profile";
 
 function App() {
   
@@ -19,14 +20,16 @@ function App() {
     <Route path ="/contact" element={<Contact/>}/>
     <Route path="/login" element={<Login/>}/>
     <Route path="/signup" element={<SignUp/>}/>
-    <Route 
-          path="/dashboard" 
+    <Route path="/profile" element={<Profile/>}/>
+
+    {/* <Route 
+          path="/profile" 
           element={
             <ProtectedRoute>
-              <Contact />
+              <Profile />
             </ProtectedRoute>
           } 
-        />
+        /> */}
    </Routes>
    </>
    

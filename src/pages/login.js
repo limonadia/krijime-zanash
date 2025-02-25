@@ -51,7 +51,7 @@ function Login(){
             <input type='password' className='border rounded-md w-full h-9'  name='password' value={formData.password}
             required onChange={handleChange}></input>
             <a className='underline hover-container'>Forgot Password?<span class="hover-popup forgot">This component is not finished yet.</span></a>
-            <button type='submit' className='loginButton hover-container'>Login<span class="hover-popup">This component is not finished yet.</span></button>
+            <button type='submit' className='loginButton hover-container'>Login</button>
         </form>
         </div>
         </div>
