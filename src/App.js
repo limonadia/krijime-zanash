@@ -5,8 +5,9 @@ import Shop from './pages/shop';
 import Contact from './pages/contact';
 import Login from "./pages/login";
 import SignUp from "./pages/signup";
-import ProtectedRoute from "./protectedRoute";
+// import ProtectedRoute from "./protectedRoute";
 import Profile from "./pages/profile";
+import PDP from "./pages/product-details";
 
 function App() {
   
@@ -21,6 +22,7 @@ function App() {
     <Route path="/login" element={<Login/>}/>
     <Route path="/signup" element={<SignUp/>}/>
     <Route path="/profile" element={<Profile/>}/>
+    <Route path="/product-details" element={<PDP/>}/>
 
     {/* <Route 
           path="/profile" 
